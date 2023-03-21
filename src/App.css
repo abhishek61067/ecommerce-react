@@ -102,6 +102,10 @@ font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans 
   width: 30%;
 }
 
+.dropdown-menu.show {
+    display: block;
+    left: -200px;
+}
 /* Media Queries */
 @media (max-width: 771px) {
   .filters {
