@@ -9,7 +9,7 @@ const Cart =  createContext()
 // createContext returns object which contains provider(Cart.provider in our case) 
 // and Cart.Consumer which i am not sure we have used. But i am confused if
 //  it is useContext going through this article(https://beta.reactjs.org/reference/react/createContext)
-
+faker.seed(99);
 
 
 const Context = ({children}) => {
@@ -18,7 +18,7 @@ const Context = ({children}) => {
     id : faker.datatype.uuid(),
     name: faker.commerce.productName(),
     price: faker.commerce.price(),
-    image: faker.image.fashion(),
+    image: faker.image.abstract(),
     inStock: faker.helpers.arrayElement([3,4,5,1,0]),
     fastDelivery: faker.datatype.boolean(),
     ratings: faker.helpers.arrayElement([1, 2, 3, 4, 5]),
@@ -29,7 +29,7 @@ const Context = ({children}) => {
   const initialState = {products: products, cart: []};
   const [state, dispatch] = useReducer(cartReducer, initialState);
 
-  // console.log(Products);
+  // console.log(products);
 
   return (
     <Cart.Provider value={{state, dispatch}}>
