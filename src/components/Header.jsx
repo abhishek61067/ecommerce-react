@@ -9,7 +9,7 @@ import { CartState } from '../context/Context';
 
 const Header = () => {
 
-  const {state:{products, cart}, dispatch} = CartState();
+  const {state:{products, cart}, dispatch, productDispatch} = CartState();
   return (
     <div>
         <>
@@ -17,7 +17,7 @@ const Header = () => {
             <Container>
                 <Link to="/">React-Bootstrap</Link>
                 <Navbar.Text>
-                    <FormControl className="w-25rem m-auto">
+                    <FormControl className="w-25rem m-auto" placeholder="Search a product" onChange = {(e)=>{productDispatch({type:"FILTER_BY_SEARCH", payload: e.target.value})}}>
                     </FormControl>
                 </Navbar.Text>
                 <Dropdown>
