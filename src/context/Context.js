@@ -29,14 +29,12 @@ const Context = ({children}) => {
   const initialState = {products: products, cart: []};
   const [state, dispatch] = useReducer(cartReducer, initialState);
 
-
   const [productState, productDispatch] =  useReducer(productReducer, {
     byStock: false,
     byFastDelivery: false,
     byRating: 0,
     searchQuery:""
   });
-  console.log("productState: ", productState);
 
   return (
     <Cart.Provider value={{ state, dispatch, productState, productDispatch }}>
