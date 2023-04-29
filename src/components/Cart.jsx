@@ -3,6 +3,11 @@ import { Button, Col, Form, Image, ListGroup, Row } from "react-bootstrap";
 import { AiFillDelete } from "react-icons/ai";
 import { CartState } from "../context/Context";
 import Rating from "./Rating";
+  import ReactDOM from 'react-dom'
+  import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+  import { faSpinner } from '@fortawesome/free-solid-svg-icons'
+
+
 
 const Cart = () => {
   const {
@@ -28,12 +33,13 @@ const Cart = () => {
               <Row>
                 <Col md={2}>
                   <Image src={prod.image} alt={prod.name} fluid rounded />
+{/* <FontAwesomeIcon icon={faSpinner} /> */}
                 </Col>
                 <Col md={2}>
                   <span>{prod.name}</span>
                 </Col>
                 <Col md={2}>₹ {prod.price}</Col>
-                <Col md={2}>
+                <Col md={2}>k
                   <Rating rating={prod.ratings} />
                 </Col>
                 <Col md={2}>
