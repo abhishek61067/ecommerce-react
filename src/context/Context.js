@@ -22,13 +22,13 @@ const Context = ({children}) => {
     inStock: faker.helpers.arrayElement([3,4,5,1,0]),
     fastDelivery: faker.datatype.boolean(),
     ratings: faker.helpers.arrayElement([1, 2, 3, 4, 5]),
-
   }));
-
+  
   // useReducer usecase
   const initialState = {products: products, cart: []};
   const [state, dispatch] = useReducer(cartReducer, initialState);
 
+  // for filters in sidebar
   const [productState, productDispatch] =  useReducer(productReducer, {
     byStock: false,
     byFastDelivery: false,
