@@ -5,6 +5,9 @@ import { CartState } from '../context/Context';
 
 const SingleProduct = ({details}) => {
   const {state: {cart }, dispatch} = CartState();
+
+  console.log('cart new:', cart);
+
   return (
     <div className='products'>
      <Card>

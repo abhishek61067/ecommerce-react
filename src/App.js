@@ -1,6 +1,5 @@
 // import logo from './logo.svg';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import './App.css';
 import Cart from './components/Cart';
 import Header from './components/Header';
 import Home from './components/Home';

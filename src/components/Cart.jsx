@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button, Col, Form, Image, ListGroup, Row } from "react-bootstrap";
 import { AiFillDelete } from "react-icons/ai";
+import DeleteIcon from "../Icons/Delete";
 import { CartState } from "../context/Context";
 import Rating from "./Rating";
   import ReactDOM from 'react-dom'
@@ -14,13 +15,14 @@ const Cart = () => {
     state: { cart },
     dispatch,
   } = CartState();
+
   const [total, setTotal] = useState();
 
   
 
   useEffect(() => {
     setTotal(
-      cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0)
+      cart.reduce((acc, curr) => acc + Number(curr.price) * Number(curr.qty), 0)
     );
   }, [cart]);
 
@@ -72,7 +74,7 @@ const Cart = () => {
                       })
                     }
                   >
-                    <AiFillDelete fontSize="20px" />
+                    <DeleteIcon/>
                   </Button>
                 </Col>
               </Row>
