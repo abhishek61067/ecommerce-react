@@ -11,7 +11,7 @@ const Home = () => {
 
 
 //Just for test case of what context provides
-const {i, iDispatch} = CartState();
+let {i, iChange} = CartState();
 
 
 
@@ -67,10 +67,7 @@ return sort === "lowToHigh" ? a.price - b.price : b.price - a.price
 
   return (
     <div className='home'>
-      <button className='align-self-start p-2' onClick={(e)=>{iDispatch({
-    type:"increment",
-payload: i
-  })}}>Test</button>
+      <button className='align-self-start p-2' onClick={(e)=>{iChange(()=>{ return i++})}}>Test</button>
       <Filters/>
       <div className="productContainer">
         {
