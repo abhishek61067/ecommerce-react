@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { CartState } from '../context/Context';
 import Filters from './Filters';
 import SingleProduct from './SingleProduct';
@@ -6,9 +6,27 @@ import SingleProduct from './SingleProduct';
 
 const Home = () => {
 
+
+
+
+
+//Just for test case of what context provides
+const {i, iDispatch} = CartState();
+
+
+
+
+useEffect(()=>{
+  console.log('variables provided as prop in context.provider in context component:', i); 
+}, [i])
+
+// abc.i++;
 // destructuring the CartState
 const { state:{products}, productState:{sort, byStock, 
   byFastDelivery, byRating, searchQuery}, } = CartState();
+
+
+  
 
   // console.log("sort: ",sort);
   const transformProducts = () => {
@@ -49,6 +67,10 @@ return sort === "lowToHigh" ? a.price - b.price : b.price - a.price
 
   return (
     <div className='home'>
+      <button className='align-self-start p-2' onClick={(e)=>{iDispatch({
+    type:"increment",
+payload: i
+  })}}>Test</button>
       <Filters/>
       <div className="productContainer">
         {

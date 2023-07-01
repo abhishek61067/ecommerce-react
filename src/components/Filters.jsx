@@ -81,7 +81,7 @@ const Filters = () => {
         <label style={{ paddingRight: 10 }}>Rating: </label>
         <Rating
           rating={byRating}
-          onClick = {(i) => productDispatch({
+          settingRate = {(i) => productDispatch({
             type:"FILTER_BY_RATING",
             payload: i
           })}
