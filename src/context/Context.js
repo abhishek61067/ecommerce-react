@@ -3,7 +3,6 @@
 import { faker } from "@faker-js/faker";
 import React, { createContext, useContext, useReducer } from "react";
 import { cartReducer, productReducer, iReducer } from "./Reducers";
-import { useState } from "react";
 
 const Cart = createContext();
 // createContext returns object which contains provider(Cart.provider in our case)
@@ -30,7 +29,7 @@ const Context = ({ children }) => {
     cart: [],
   });
 
-  const [i, iChange] = useState(0);
+  const [i, iDispatch] = useReducer(iReducer, 0);
 
   // for filters in sidebar
   const [productState, productDispatch] = useReducer(productReducer, {
@@ -41,7 +40,7 @@ const Context = ({ children }) => {
   });
 
   return (
-    <Cart.Provider value={{i, iChange, state, dispatch, productState, productDispatch }}>
+    <Cart.Provider value={{i, iDispatch, state, dispatch, productState, productDispatch }}>
       {children}
     </Cart.Provider>
   );
