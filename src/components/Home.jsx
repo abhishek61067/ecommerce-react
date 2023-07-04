@@ -67,7 +67,7 @@ return sort === "lowToHigh" ? a.price - b.price : b.price - a.price
 
   return (
     <div className='home'>
-      <button className='align-self-start p-2' onClick={(e)=>{iChange(()=>{ return i++})}}>Test</button>
+      <button className='align-self-start p-2' onClick={(e)=>{iChange(++i)}}>Test</button>
       <Filters/>
       <div className="productContainer">
         {
