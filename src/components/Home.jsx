@@ -67,7 +67,7 @@ const {clickCount, setClickCount} = CartState();
 
           await iDispatch({
             type: "increment",
-            payload: i,
+            payload: '',
           });
           console.log('idispatch completed');
         }}
