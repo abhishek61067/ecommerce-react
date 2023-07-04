@@ -28,7 +28,7 @@ const Context = ({ children }) => {
     products: products,
     cart: [],
   });
-
+  let [clickCount, setClickCount] = React.useState(0);
   const [i, iDispatch] = useReducer(iReducer, 0);
 
   // for filters in sidebar
@@ -40,7 +40,7 @@ const Context = ({ children }) => {
   });
 
   return (
-    <Cart.Provider value={{i, iDispatch, state, dispatch, productState, productDispatch }}>
+    <Cart.Provider value={{i, iDispatch, state, dispatch, productState, productDispatch, clickCount, setClickCount }}>
       {children}
     </Cart.Provider>
   );

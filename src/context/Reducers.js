@@ -12,10 +12,10 @@ export const cartReducer = (state, action) => {
 }
 export const iReducer = (state, action) => {
   switch (action.type) {
-    case "increment":
-      return action.payload++;
-      case "REMOVE_FROM_CART":
-      return action.payload--;  
+    case "increment":     
+      return  ++state;
+    case "REMOVE_FROM_CART":
+      return ++state;  
     default:
       return state;
   }
